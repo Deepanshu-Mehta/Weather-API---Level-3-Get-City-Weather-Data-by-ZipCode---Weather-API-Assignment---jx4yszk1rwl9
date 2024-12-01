@@ -54,7 +54,7 @@ async function getWeatherDataByZipCode(zipCode) {
     const data = await getDataFromDatabase();
    const cityWeather = data.find((city)=> city.zipCode == zipCode);
    if(cityWeather){
-    return cityWeather;
+    return cityWeather.weather;
     }else{
       return new Error('ZipCode not found')
    }
